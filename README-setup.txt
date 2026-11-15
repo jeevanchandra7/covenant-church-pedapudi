@@ -25,7 +25,7 @@ Members and admin
 - Admins can add, change, and remove member entries in the Members tab. Add people only with their agreement.
 
 Bible story background and devotionals
-- The website and installed app use a full-screen sunrise scene with a cross, layered mountains, drifting clouds, warm sun glow, birds, and grasses moving in the wind. The scene is drawn in the page rather than loaded from a video file.
+- The website and installed app use a full-screen sunrise scene with a cross and a gentle robed Jesus silhouette, layered mountains, drifting clouds, warm sun glow, birds, and grasses moving in the wind. The scene is drawn in the page rather than loaded from a video file.
 - The Bible verse changes daily. The short devotional prayer changes every two days.
 
 Children’s activities and videos
