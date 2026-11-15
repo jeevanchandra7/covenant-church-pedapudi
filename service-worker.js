@@ -1,5 +1,5 @@
 const CACHE_NAME = 'covenant-church-shell-v3';
-const APP_FILES = ['./', './index.html', './admin.html', './manifest.webmanifest', './app-icon.png', './bible-verse-background.jpg'];
+const APP_FILES = ['./', './index.html', './admin.html', './manifest.webmanifest', './app-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache =>
     Promise.all(APP_FILES.map(file => cache.add(file).catch(() => undefined)))
