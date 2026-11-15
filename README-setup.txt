@@ -34,7 +34,7 @@ In the admin editor, open Children & festivals to add activity descriptions, dat
 Prayer requests and WhatsApp
 The prayer form asks for the visitor’s name, mobile number, request, and consent. It opens WhatsApp with a prefilled message to +91 9885885054. The visitor reviews the details and taps Send. The church admin can reply from WhatsApp.
 
-To set an automatic welcome reply, use WhatsApp Business on the admin phone: Tools > Greeting message > turn on Send greeting message > edit the wording > choose recipients > Save. Suggested text: “Thank you for sharing your prayer request with Covenant Church Pedapudi. We are praying with you. May God comfort and strengthen you. Amen.” WhatsApp Business sends this greeting to first-time contacts and people who return after 14 days of inactivity. Sending a custom automatic reply after every prayer request requires the WhatsApp Business Platform and a secure server integration.
+To set an automatic welcome reply, use WhatsApp Business on the admin phone: Tools > Greeting message > turn on Send greeting message > edit the wording > choose recipients > Save. Suggested text: “Thank you for sharing your prayer request with Holy Life Covenant Churches. We are praying with you. May God comfort and strengthen you. Amen.” WhatsApp Business sends this greeting to first-time contacts and people who return after 14 days of inactivity. Sending a custom automatic reply after every prayer request requires the WhatsApp Business Platform and a secure server integration.
 
 Safety, security, and giving
 - Never put a Supabase Secret key or database password in website files. The browser uses the Publishable key.

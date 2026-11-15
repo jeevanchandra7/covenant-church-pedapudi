@@ -1,11 +1,18 @@
 {
-  "name": "Covenant Church Pedapudi",
-  "short_name": "Covenant Church",
-  "description": "Church family, Bible stories, prayer and events.",
+  "name": "Holy Life Covenant Churches",
+  "short_name": "Holy Life Churches",
+  "description": "Holy Life Covenant Churches community, Bible resources, prayer, groups and events.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f7f5ef",
   "theme_color": "#17354d",
-  "icons": [{ "src": "./app-icon.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any maskable" }]
+  "icons": [
+    {
+      "src": "./app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
