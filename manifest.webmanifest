@@ -1,0 +1,11 @@
+{
+  "name": "Covenant Church Pedapudi",
+  "short_name": "Covenant Church",
+  "description": "Church family, Bible stories, prayer and events.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#17354d",
+  "icons": [{ "src": "./app-icon.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any maskable" }]
+}

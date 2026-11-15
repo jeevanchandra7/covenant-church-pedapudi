@@ -1,33 +1,42 @@
 COVENANT CHURCH PEDAPUDI — WEBSITE UPDATE
 
-The ZIP contains these four files. Upload all four to the top level of your existing GitHub repository and commit the update:
-  index.html       Public church website
-  admin.html       Private editor for the approved administrator
-  admin-setup.sql  Supabase database and access rules
-  README-setup.txt These instructions
+The ZIP contains these files. Extract them, upload every file to the top level of your existing GitHub repository, and commit the update:
+  index.html             Public church website and installable app
+  admin.html             Private church content editor
+  admin-setup.sql        Supabase tables, access rules, and public member view
+  manifest.webmanifest   Phone app name and icon settings
+  service-worker.js      App install and offline page shell
+  app-icon.png           Church app icon
+  README-setup.txt       These instructions
 
-Upload and publish
-1. Open the church repository on GitHub, choose Add file > Upload files, select all four files from this ZIP, and commit directly to main.
-2. GitHub Pages will update the existing website after the commit. Open the website and refresh it after a minute or two.
-3. If the old setup is in Supabase, open Supabase > SQL Editor, create a new query, paste the full updated admin-setup.sql, and click Run. This also updates the member directory so only approved administrators can read it.
-4. In Supabase Authentication, make sure the administrator account for jeevanchandra.lifecare@gmail.com has been created and its email confirmed. Then run the SQL so that account is granted editor access.
-5. Open https://jeevanchandra7.github.io/covenant-church-pedapudi/admin.html and sign in with the administrator account.
+Publish this update
+1. Open your GitHub repository, choose Add file > Upload files, select all seven extracted files, and commit directly to main. Do not upload the ZIP itself.
+2. In Supabase, open SQL Editor, paste the complete updated admin-setup.sql, and click Run. This creates the public member directory view. The member table itself remains admin-only.
+3. Wait a minute or two, then refresh the GitHub Pages site.
 
-What the update includes
-- The navigation appears once. Home, Events, Bible, Messages, Groups, Children, Prayer, and Gift open as screens in the same browser tab.
-- The home background now shows an animated Bible nativity scene with moving clouds, a guiding star, and a softly glowing manger. It is drawn in the page, so no video file needs uploading.
-- A Bible verse is selected by date and updates daily. The short devotional prayer changes every two days.
-- When people create an account, they can enter their name, username, age, town/location, mobile number, and email. My account displays these details, and members can complete or update their profile there after signing in.
-- The Members link opens the admin editor. The directory is not shown to public visitors; the admin can add and edit name, age, gender, group, role, and description.
-- In the editor, use Children to add sports, Bible competitions, Sunday school, dance performances, prizes, seasonal celebrations, and related photos. Use Events and Gallery for church events and photos.
-- The location button uses the Google Maps share link supplied by the church.
-- The home screen has a gentle, animated nativity-inspired illustration made with the page design.
-- Bible quotations use the World English Bible (public domain), with a source link on the page.
+Install it on a phone
+- Android: open the church website in Chrome, tap ⋮, then choose Install app or Add to Home screen.
+- iPhone: open the website in Safari, tap Share, then Add to Home Screen.
+The installed app uses the same changing Bible story background as the website.
 
-Editing content
-Use the admin editor tabs to change the home and service details, events, Bible resources, groups, children’s activities, photos, UPI information, and members. Click Save changes to publish text and list updates. Uploaded photos are stored in the church-gallery bucket; the setup SQL creates the bucket and its access rules.
+Members and admin
+- Members opens inside the website. Visitors see names, groups, roles, and descriptions that the admin has added. Age and gender stay private in the admin editor.
+- The Admin button beside Sign in opens the approved admin editor: https://jeevanchandra7.github.io/covenant-church-pedapudi/admin.html
+- Admins can add, change, and remove member entries in the Members tab. Add people only with their agreement.
 
-Giving and security
-- The Gift page includes a Bible verse and prayer and displays the church’s official UPI QR. Donors complete payment in their own UPI app. This site does not confirm payment or collect payment details.
-- The browser uses the Supabase Publishable key. Never put a Supabase Secret key or database password in these files.
-- Only approved administrators can use the editor or read/change the member directory. Add personal member details only with their permission.
+Bible story background and devotionals
+- The full page background uses one of seven illustrated Bible stories and picks a different scene when the site is reopened or refreshed. The animated scene is drawn in the page rather than loaded from a video file.
+- The Bible verse changes daily. The short devotional prayer changes every two days.
+
+Children’s activities and videos
+In the admin editor, open Children & festivals to add activity descriptions, dates, age groups, prizes, photos, and short MP4/WebM videos. Use compressed, shorter videos. Upload children’s photos and videos only with parent or guardian permission.
+
+Prayer requests and WhatsApp
+The prayer form asks for the visitor’s name, mobile number, request, and consent. It opens WhatsApp with a prefilled message to +91 9885885054. The visitor reviews the details and taps Send. The church admin can reply from WhatsApp.
+
+To set an automatic welcome reply, use WhatsApp Business on the admin phone: Tools > Greeting message > turn on Send greeting message > edit the wording > choose recipients > Save. Suggested text: “Thank you for sharing your prayer request with Covenant Church Pedapudi. We are praying with you. May God comfort and strengthen you. Amen.” WhatsApp Business sends this greeting to first-time contacts and people who return after 14 days of inactivity. Sending a custom automatic reply after every prayer request requires the WhatsApp Business Platform and a secure server integration.
+
+Safety, security, and giving
+- Never put a Supabase Secret key or database password in website files. The browser uses the Publishable key.
+- The public directory view contains only name, group, role, and description. Age and gender remain in the protected member table.
+- The Gift page shows the church UPI QR. Donors complete payment in their UPI app; the website does not verify or record payments.

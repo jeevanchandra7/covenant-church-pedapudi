@@ -26,6 +26,23 @@ create table if not exists public.members (
 alter table public.members add column if not exists age smallint;
 alter table public.members add column if not exists gender text not null default 'Prefer not to say';
 
+-- Public directory shows only names and ministry details. Age and gender remain
+-- in the admin-only table and are not exposed through this view.
+create or replace view public.member_directory with (security_invoker = false) as
+  select full_name, category, role, description
+  from public.members;
+grant select on public.member_directory to anon, authenticated;
+
+-- Replace the previously supplied admin WhatsApp number without overwriting
+-- any different number the church administrator has since configured.
+update public.site_content
+set content = jsonb_set(content, '{whatsappNumber}', to_jsonb('+919885885054'::text), true)
+where id = 'main'
+  and (
+    content->>'whatsappNumber' is null
+    or regexp_replace(content->>'whatsappNumber', '[^0-9]', '', 'g') = '919059868665'
+  );
+
 alter table public.site_admins enable row level security;
 alter table public.site_content enable row level security;
 alter table public.members enable row level security;
