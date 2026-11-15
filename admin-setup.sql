@@ -16,11 +16,15 @@ create table if not exists public.members (
   id uuid primary key default gen_random_uuid(),
   full_name text not null,
   category text not null check (category in ('Men', 'Women', 'Youth')),
+  age smallint check (age is null or age between 1 and 120),
+  gender text not null default 'Prefer not to say' check (gender in ('Male', 'Female', 'Prefer not to say')),
   role text not null default '',
   description text not null default '',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+alter table public.members add column if not exists age smallint;
+alter table public.members add column if not exists gender text not null default 'Prefer not to say';
 
 alter table public.site_admins enable row level security;
 alter table public.site_content enable row level security;
@@ -62,9 +66,13 @@ create policy "Admins can update site content"
   ));
 
 drop policy if exists "Signed-in church members can view directory" on public.members;
-create policy "Signed-in church members can view directory"
+drop policy if exists "Admins can view members" on public.members;
+create policy "Admins can view members"
   on public.members for select to authenticated
-  using (true);
+  using (exists (
+    select 1 from public.site_admins
+    where site_admins.user_id = (select auth.uid())
+  ));
 
 drop policy if exists "Admins can add directory members" on public.members;
 create policy "Admins can add directory members"
