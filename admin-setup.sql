@@ -12,11 +12,24 @@ create table if not exists public.site_content (
   updated_at timestamptz not null default now()
 );
 
+create table if not exists public.members (
+  id uuid primary key default gen_random_uuid(),
+  full_name text not null,
+  category text not null check (category in ('Men', 'Women', 'Youth')),
+  role text not null default '',
+  description text not null default '',
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
 alter table public.site_admins enable row level security;
 alter table public.site_content enable row level security;
+alter table public.members enable row level security;
 grant select on public.site_admins to authenticated;
 grant select on public.site_content to anon, authenticated;
 grant insert, update on public.site_content to authenticated;
+grant select on public.members to authenticated;
+grant insert, update, delete on public.members to authenticated;
 
 drop policy if exists "Admins can read their own access" on public.site_admins;
 create policy "Admins can read their own access"
@@ -44,6 +57,39 @@ create policy "Admins can update site content"
     where site_admins.user_id = (select auth.uid())
   ))
   with check (exists (
+    select 1 from public.site_admins
+    where site_admins.user_id = (select auth.uid())
+  ));
+
+drop policy if exists "Signed-in church members can view directory" on public.members;
+create policy "Signed-in church members can view directory"
+  on public.members for select to authenticated
+  using (true);
+
+drop policy if exists "Admins can add directory members" on public.members;
+create policy "Admins can add directory members"
+  on public.members for insert to authenticated
+  with check (exists (
+    select 1 from public.site_admins
+    where site_admins.user_id = (select auth.uid())
+  ));
+
+drop policy if exists "Admins can update directory members" on public.members;
+create policy "Admins can update directory members"
+  on public.members for update to authenticated
+  using (exists (
+    select 1 from public.site_admins
+    where site_admins.user_id = (select auth.uid())
+  ))
+  with check (exists (
+    select 1 from public.site_admins
+    where site_admins.user_id = (select auth.uid())
+  ));
+
+drop policy if exists "Admins can remove directory members" on public.members;
+create policy "Admins can remove directory members"
+  on public.members for delete to authenticated
+  using (exists (
     select 1 from public.site_admins
     where site_admins.user_id = (select auth.uid())
   ));
