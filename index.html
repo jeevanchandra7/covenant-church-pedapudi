@@ -32,6 +32,27 @@ body{position:relative;isolation:isolate;background:transparent!important}#story
     @media(prefers-reduced-motion:reduce){.app-page,.nativity-star,.nativity-sky{animation:none!important}}
   body{background:#f7f5ef!important;isolation:auto!important}#story-background{display:none!important}#app-page-home{background:#f7f5ef!important;min-height:0}#app-page-home>.hero{background:transparent!important;box-shadow:none;border:0}#app-page-home>.hero>div:first-child{background:#fffdf8;border:1px solid #e9e7df;box-shadow:0 12px 34px #203b3210}
 </style>
+<style id="mobile-menu-visibility-fix">
+@media (max-width: 760px) {
+  header.top { position: relative !important; z-index: 10000 !important; overflow: visible !important; }
+  header.top .nav:not(.is-open) { display: none !important; }
+  header.top .nav.is-open {
+    display: flex !important; visibility: visible !important; opacity: 1 !important;
+    position: fixed !important; top: 76px !important; left: 12px !important; right: 12px !important;
+    z-index: 10001 !important; flex-direction: column !important; align-items: stretch !important;
+    gap: 0 !important; max-height: calc(100dvh - 88px) !important; overflow-y: auto !important;
+    padding: 8px 0 !important; background: #fff !important; color: #17344b !important;
+    border: 1px solid #d8dfdc !important; border-radius: 14px !important;
+    box-shadow: 0 16px 42px rgba(20, 47, 70, .24) !important; transform: none !important;
+  }
+  header.top .nav.is-open a {
+    display: block !important; visibility: visible !important; color: #17344b !important;
+    font-size: 16px !important; line-height: 1.35 !important; padding: 13px 18px !important;
+    border-bottom: 1px solid #e7ebe7 !important; text-decoration: none !important;
+  }
+  header.top .nav.is-open a:last-child { border-bottom: 0 !important; }
+}
+</style>
 </head>
 <body>
   <header class="top shell">

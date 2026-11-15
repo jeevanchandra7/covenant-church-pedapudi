@@ -1,4 +1,4 @@
-const CACHE_NAME = 'covenant-church-shell-v4';
+const CACHE_NAME = 'covenant-church-shell-v5';
 const APP_FILES = ['./', './index.html', './admin.html', './manifest.webmanifest', './app-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache =>
@@ -25,3 +25,4 @@ self.addEventListener('fetch', event => {
   }
   event.respondWith(caches.match(request).then(cached => cached || fetch(request)));
 });
+
