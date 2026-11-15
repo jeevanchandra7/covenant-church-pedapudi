@@ -1,16 +1,17 @@
 COVENANT CHURCH PEDAPUDI — WEBSITE UPDATE
 
-The ZIP contains these files. Extract them, upload every file to the top level of your existing GitHub repository, and commit the update:
+The ZIP contains eight files. Extract them, upload all eight to the top level of your existing GitHub repository, and commit the update:
   index.html             Public church website and installable app
   admin.html             Private church content editor
   admin-setup.sql        Supabase tables, access rules, and public member view
   manifest.webmanifest   Phone app name and icon settings
   service-worker.js      App install and offline page shell
   app-icon.png           Church app icon
+  bible-verse-background.jpg  Your supplied mountain verse image
   README-setup.txt       These instructions
 
 Publish this update
-1. Open your GitHub repository, choose Add file > Upload files, select all seven extracted files, and commit directly to main. Do not upload the ZIP itself.
+1. Open your GitHub repository, choose Add file > Upload files, select all eight extracted files, and commit directly to main. Do not upload the ZIP itself.
 2. In Supabase, open SQL Editor, paste the complete updated admin-setup.sql, and click Run. This creates the public member directory view. The member table itself remains admin-only.
 3. Wait a minute or two, then refresh the GitHub Pages site.
 
@@ -25,7 +26,7 @@ Members and admin
 - Admins can add, change, and remove member entries in the Members tab. Add people only with their agreement.
 
 Bible story background and devotionals
-- The website and installed app use a full-screen sunrise scene with a cross and a gentle robed Jesus silhouette, layered mountains, drifting clouds, warm sun glow, birds, and grasses moving in the wind. The scene is drawn in the page rather than loaded from a video file.
+- The website and installed app use a full-screen sunrise scene with the mountain sunrise photo you supplied, with gently moving mist, birds, and foreground grasses. The Psalm 121 verse remains in the image. The scene is drawn in the page rather than loaded from a video file.
 - The Bible verse changes daily. The short devotional prayer changes every two days.
 
 Children’s activities and videos
