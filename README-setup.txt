@@ -17,7 +17,7 @@ Publish this update
 Install it on a phone
 - Android: open the church website in Chrome, tap ⋮, then choose Install app or Add to Home screen.
 - iPhone: open the website in Safari, tap Share, then Add to Home Screen.
-The installed app uses the same changing Bible story background as the website.
+The installed app uses the same animated sunrise scene as the website.
 
 Members and admin
 - Members opens inside the website. Visitors see names, groups, roles, and descriptions that the admin has added. Age and gender stay private in the admin editor.
@@ -25,7 +25,7 @@ Members and admin
 - Admins can add, change, and remove member entries in the Members tab. Add people only with their agreement.
 
 Bible story background and devotionals
-- The full page background uses one of seven illustrated Bible stories and picks a different scene when the site is reopened or refreshed. The animated scene is drawn in the page rather than loaded from a video file.
+- The website and installed app use a full-screen sunrise scene with a cross, layered mountains, drifting clouds, warm sun glow, birds, and grasses moving in the wind. The scene is drawn in the page rather than loaded from a video file.
 - The Bible verse changes daily. The short devotional prayer changes every two days.
 
 Children’s activities and videos
