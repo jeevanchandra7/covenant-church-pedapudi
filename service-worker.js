@@ -1,4 +1,4 @@
-const CACHE_NAME = 'holy-life-church-shell-v6';
+const CACHE_NAME = 'holy-life-church-shell-v7';
 const APP_FILES = ['./', './index.html', './admin.html', './manifest.webmanifest', './app-icon.png', './assets/covenant-church-logo.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache =>
@@ -25,4 +25,5 @@ self.addEventListener('fetch', event => {
   }
   event.respondWith(caches.match(request).then(cached => cached || fetch(request)));
 });
+
 
